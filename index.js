@@ -15,10 +15,10 @@ function submitData (name, email) {
 return fetch("http://localhost:3000/users", configObj)
 .then(Response => Response.json())
 .then(function(object) {
-  document.body.innerHTML = `${object.id}`;
+  document.body.innerHTML = object.id;
 })
-.catch(function(obj) {
-  document.body.innerHTML = `${obj.message}`;
+.catch(function(error) {
+  document.body.innerHTML = error.message;
 });
 }
 
